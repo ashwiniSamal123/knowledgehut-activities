@@ -1,0 +1,19 @@
+* {box-sizing: border-box;}
+
+.container { display: flex; flex-direction: row;}
+
+.container > div { padding: 5px; }
+
+@media (max-width:400px) {
+    .container { flex-direction: column; }
+}
+
+.item1 {
+    background-color: rgb(67, 189, 30); border: 2px solid black; flex-grow: 1;
+}
+.item2 {
+    background-color: rgb(56, 146, 104); border: 2px solid black; flex-grow: 1;
+}
+.item3 {
+    background-color: rgb(163, 42, 89); border: 2px solid black; flex-grow: 1;
+}

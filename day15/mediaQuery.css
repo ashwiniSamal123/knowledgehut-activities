@@ -1,0 +1,19 @@
+.title {
+    color: rgb(233, 22, 40);
+}
+.sub-title {
+    color: green;
+}
+@media (max-width: 500px) {
+    .title {
+        background-color: rgb(37, 37, 35);
+    }
+    .sub-title {
+       background-color: rgb(247, 168, 139);
+    }
+}
+@media print {
+    .title, .sub-title {
+        color: black;
+    }
+}

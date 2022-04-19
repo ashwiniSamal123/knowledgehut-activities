@@ -1,0 +1,33 @@
+*{
+    background-color: cornflowerblue;
+}
+
+
+div { 
+    display: inline-block; margin: 100px;
+}
+.circle {
+    width: 300px; height: 300px; border: solid 3px black; 
+    animation: change 15s alternate infinite;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: darksalmon;
+    
+}
+.box {
+    width: 100px; height: 100px; border: dashed 3px black;
+    animation: roll 3s infinite;
+}
+@keyframes roll {
+    0% {transform: rotate(0deg);background-color: lightpink;}    
+    100% {transform: rotate(360deg);background-color: cadetblue;}
+}
+
+@keyframes change {
+    0% {background-image:url('coffee.jpg'); border-radius: 50% 50% 50% 50%;}
+    25% {background-image: url('fries.jpg'); border-radius: 0}
+    50% {background-image: url('juice.jpg'); border-radius: 50% 50% 50% 50%;}
+    75% {background-image: url('burger.jpg'); border-radius:0;}
+
+    
+}
