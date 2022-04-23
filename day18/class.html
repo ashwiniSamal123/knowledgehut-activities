@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eample of getElementbyclassName</h1>
+    <p class="cnvrt">Ashwini</p>
+    <p class="cnvrt">fullstack mern javascript bootcamp..</p>
+    <p id="upr"></p>
+    <p id="demo"></p>
+
+    <script>
+        var x= document.getElementsByClassName("cnvrt");
+        document.getElementById("upr").innerHTML= 'my name is '+x[0].innerHTML ;
+        document.getElementById("demo").innerHTML=' I am learning '+x[1].innerHTML;
+    </script>
+</body>
+</html>
