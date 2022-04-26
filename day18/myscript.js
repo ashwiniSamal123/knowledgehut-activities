@@ -1,5 +1,6 @@
 var counter = 0;
 function hello(msg)
+{
     var ele = document.getElementById('main');
     ele.innerHTML = '<h3>'+msg+'</h3>';
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1>This is an example of for in loop</h1> 
+    </div>
+    <script>
+        let emp = {id: 1, name: "Ashwini", salary:45000};
+        let items= [10,20,30,40];
+        for(let k in emp){
+            //console.log(k);
+            console.log("property: " +k+ ", value: " +emp[k]);
+        }
+        
+        for(let i in items){
+            console.log(i);
+            console.log("number: " +items[i]);
+        }
+    </script>
+</body>
+</html>

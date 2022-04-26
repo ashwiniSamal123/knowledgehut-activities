@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <div id="main2"></div>
+    <script>
+        let item =[2,3,4,5];
+        let info = document.getElementById("main");
+        let info2 = document.getElementById("main2");
+        let item20 = item.map(function(element,index){
+            return element * 100;
+        })
+        console.log(item);
+        console.log(item20);
+        info.innerHTML=item20;
+        
+        let item10 = item.map((ele,i) => ele*10);
+        console.log(item10);
+        info2.innerHTML= item10;
+
+    </script>
+</body>
+</html>

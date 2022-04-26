@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        function add(...a){
+            document.write(`<p>a = ${a}</p>`);
+
+        }
+        function sub(a,...b){
+            document.write(`<p>a= ${a}, b=${b}</p>`)
+        }
+        function test(a,b,...c){
+            document.write(`<p>a= ${a}, b=${b}, c=${c}</p>`)
+        }
+        add(10,20,40,60,80);
+        add(88,99);
+        add(55);
+        
+        sub(44,88,66);
+         sub(10,20);
+         sub(30);
+        let arr =[11,22,33,55];
+        test(arr);
+        test(...arr);
+    </script>
+</body>
+</html>

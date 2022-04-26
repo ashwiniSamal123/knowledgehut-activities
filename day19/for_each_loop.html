@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="main">
+    <h1>This is an example of for each loop</h1> 
+</div>
+<script>
+    let items = [100,200,3000,400];
+    items.forEach(function(v, i) {
+        console.log(v);
+    });
+    console.log("----------------------------------");
+    items.forEach((v,i) => console.log(v));
+</script>    
+</body>
+</html>
