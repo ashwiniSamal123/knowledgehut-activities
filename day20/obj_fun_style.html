@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mian">
+        <h1>Function style object creation</h1>
+    </div>
+    <script>
+        function Employee(name,age,salary){
+            this.name =name;
+            this.age = age;
+            this.salary= salary;
+
+        }
+        Employee.prototype.disp = function(){
+            document.write(`<p>Name: ${this.name} , age = ${this.age} , Salary = ${this.salary}</p>`);
+        }
+        let e1 = new Employee("AG", 25, 30000);
+        let e2 = new Employee("Ashwini", 23, 50000);
+        e1.disp();
+        e2.disp();
+    </script>
+</body>
+</html>
