@@ -1,57 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .thumb {width: 100px;height: 100px;border: 2px solid black;}
+      .thumb {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h2>Simple Form</h2>
-        <form action = "abc.html" method = "post" onsubmit="return handleSubmit()">
-            <div>
-                <label>Enter Username</label>
-                <input type = "text" name = "n1" autocomplete="off" id = "i1"><span id="Uname" style="color: red;"></span>
-            </div>
-            <br>
-            <div>
-                <label>Enter Lastname</label>
-                <input type = "text" name = "L1" autocomplete="off" id = "s1"><span id="Lname" style="color: red;"></span>
-            </div>
-            <br>
-            <div>
-                <label>Enter Password</label>
-                <input type = "password" name = "n2" id = "i2"><span id="pswd" style="color: red;"></span>
-            </div>
-            <input type = "submit" value = "submit">
-        </form>
+      <h2>Simple Form</h2>
+      <form action="abc.html" method="post" onsubmit="return handleSubmit()">
+        <div>
+          <label>Enter Username</label>
+          <input type="text" name="n1" autocomplete="off" id="i1" /><span
+            id="Uname"
+            style="color: red"
+          ></span>
+        </div>
+        <br />
+        <div>
+          <label>Enter Lastname</label>
+          <input type="text" name="L1" autocomplete="off" id="s1" /><span
+            id="Lname"
+            style="color: red"
+          ></span>
+        </div>
+        <br />
+        <div>
+          <label>Enter Password</label>
+          <input type="password" name="n2" id="i2" /><span id="pswd" style="color: red"></span>
+        </div>
+        <div>
+          <label>confirm Password</label>
+          <input type="password" name="n3" id="i3" /><span id="cnpswd" style="color: red"></span>
+        </div>
+        <input type="submit" id="btnSubmit" value="Submit" onsubmit="return Validate()">
+      </form>
     </div>
-    <script type = "text/javascript">
-       function handleSubmit() {
-           let input1 = document.getElementById('i1').value; // retrieves value from #i1
-           let input2 = document.getElementById('s1').value; // retrieves value from #s1
-           let input3 = document.getElementById('i2').value; // retreives value from #i2
-           let errorName = document.getElementById('Uname');
-           let errorLname = document.getElementById('Lname');
-           let errorPswd = document.getElementById('pswd');
-           if(input1.length == 0) {
-               errorName.innerText='Please enter username';
-               return false;
-            }
-            if(input2.length == 0) {
-               errorLname.innerText='Please enter user last name';
-               return false;
-           } if (input3.length == 0) {
-               errorPswd.innerText = 'Please enter password';
-               return false;
-           }
-           return true;
-       }
+    <script type="text/javascript">
+      function handleSubmit() {
+        let input1 = document.getElementById("i1").value; // retrieves value from #i1
+        let input2 = document.getElementById("s1").value; // retrieves value from #s1
+        let input3 = document.getElementById("i2").value; // retreives value from #i2
+        let errorName = document.getElementById("Uname");
+        let errorLname = document.getElementById("Lname");
+        let errorPswd = document.getElementById("pswd");
+        if (input1.length == 0) {
+          errorName.innerText = "Please enter username";
+          return false;
+        }
+        if (input2.length == 0) {
+          errorLname.innerText = "Please enter user last name";
+          return false;
+        }
+        if (input3.length == 0) {
+          errorPswd.innerText = "Please enter password";
+          return false;
+        }
+        return true;
+      }
+      function Validate() {
+        var password = document.getElementById("i2").value;
+        var confirmPassword =document.getElementById("i3").value;
+        let ele = document.getElementById('cnpswd')
+        if (password != confirmPassword) {
+         ele.innerHTML= ("Passwords do not match.");
+          return false;
+        }
+        return true;
+      }
     </script>
-</body>
+  </body>
 </html>
