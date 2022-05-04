@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>xamples of javascript</h1>
+    <script>
+       class user {
+           constructor(name, contact){
+               this.name=name;
+               this.contact= contact;
+
+           }
+        }
+       let u1 = new user("raj");
+       let u2= new user("Ajay", {phone: 993933, email: 52006});
+       let userArray = [];
+       userArray.push(u1);
+       userArray.push(u2);
+       userArray.forEach((item) => {
+             document.write(`<h2>name: ${item.name},  phone: ${item?.contact?.phone}, email: ${item?.contact?.email}</h2>`)
+                  });
+
+       
+
+      // u1.disp();
+      // u2.disp();
+       // user.test();
+    </script>
+  </body>
+</html>
