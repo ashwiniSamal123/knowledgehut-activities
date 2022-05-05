@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otp generation</title>
+  </head>
+  <body>
+    <h1>OTP generation activity</h1>
+    <script>
+      var otp = 0;
+      var randomNumber = 0;
+      var otpString = "";
+
+      randomNumber = Math.random();
+      randomNumber = randomNumber * 1000000;
+      otp = Math.trunc(randomNumber);
+      otpString = otp + "";
+      console.log(otpString);
+      
+      document.write(`<h2>string length is ${otpString.length}</h2>`);
+      document.write(`<h2> Random number is : ${randomNumber}</h2>`);
+      if (otpString != 6) 
+      {
+        document.write(`<h2>The otp is ${otpString.padStart(6, "*")}</h2>`);
+      }
+    </script>
+  </body>
+</html>

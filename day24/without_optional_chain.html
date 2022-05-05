@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>example of optional chain</h1>
+    <script>
+      let person1= {name: "alex",gender: "Male", address:{state: "KA", city:"BLR"}}
+      let person2=  {name: "ashu", gender:"female"}
+      let person3={name:"AG", gender:"male",address:{state:"maharashtra", city:"pune"}}
+      let personArray= [];
+      personArray.push(person1);
+      personArray.push(person2);
+      personArray.push(person3);
+      personArray.forEach((item) => {
+          if(item.address != undefined){
+              document.write(`<h4>NAME: ${item.name},Gender:${item.gender}, state = ${item.address.state}, city= ${item.address.city}</h4>`)
+          }
+          else {
+              document.write(`<h4>NAME: ${item.name},Gender:${item.gender}</h4>`)
+
+          }
+      });
+    </script>
+  </body>
+</html>

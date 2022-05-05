@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>set interval example</h1>
+    <h3>
+        It is executed repeatedly after the completing the specific duration.
+        we can stop it using clearInterval...
+    </h3>
+    <div id="main"> counter: </div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+
+    <script>
+        let ele = document.getElementById('main');
+        let timerID = 0;
+        function startTimer(){
+            let counter= 0;
+            timerID = setInterval(() =>{
+                counter++;
+                ele.innerHTML=`counter:${counter}`;
+                console.log('timer running, with counte : '+counter);
+            },1000);
+        }
+        function stopTimer(){
+            clearInterval(timerID);
+        }
+
+    </script>
+</body>
+</html>
