@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Inheritance example</h1>
+    <script>
+      class person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        showInfo() {
+          document.write(`<h2>person name:${this.name}, Age=${this.age}</h2>`);
+        }
+      }
+      class Employee extends person {
+        constructor(id, name, age) {
+          super(name, age);
+          this.id = id;
+        }
+        showAllInfo() {
+          super.showInfo();
+          document.write(`<h2>Id= ${this.id}</h2>`);
+        }
+      }
+      let e = new Employee(100, " Raj ", 35);
+      e.showAllInfo();
+    </script>
+  </body>
+</html>

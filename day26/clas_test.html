@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance Example</h1>
+    <p>Here the function test() is replaced by test(x, y) because of the order, it is not overriding but we can treat this as test(x, y) is over writing test().</p>
+    <script>
+        class xyz {
+            test() {
+                document.write('<p>tset()is called</p>');
+
+            }
+            test(x, y){
+                document.write('<p>test(x,y) is called</p>');
+            }
+        }
+        let obj = new xyz();
+        obj.test();
+        obj.test(20,30,40);
+    </script>
+</body>
+</html>

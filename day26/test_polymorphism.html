@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Example of polymorphism</h2>
+    <h3>Runtime polymorphism: The invocation of overridden method can’t be determined unless you know which object you are passing</h3>
+    <script>
+        class person{
+            constructor(name){
+                this.name=name;
+            }
+            display(){
+                document.write(`<h2>person name: ${this.name}</h2>`);
+            }
+        }
+        class Employee extends person {
+            constructor(name,salary){
+                super(name);
+                this.salary = salary;
+            }
+            display(){
+                document.write(`<h2>Employee Name:${this.name}, salary = ${this.salary}</h2>`)
+            }
+        }
+        function test(u){
+            u.display();
+        }
+        let p = new person("vijay");
+        let e= new Employee("Raj", 35000);
+          test(p);
+          test(e); 
+    </script>
+</body>
+</html>

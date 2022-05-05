@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>example of overriding</h1>
+    <p>Here Employee class display() has overridden Person class display()</p>
+    <script>
+        class person{
+            constructor(name) {
+                this.name=name;
+            }
+            display(){
+                document.write(`<h2>person name =${this.name}</h2>`)
+            }
+        }
+        class Employee extends person{
+            constructor(name, salary){
+                super(name);
+                this.salary= salary;
+            }
+            display(){
+                document.write(`<h2>Employee name=  ${this.name}, salary = ${this.salary}</h2>`)
+    
+            }
+
+        }
+        let e = new Employee("raj", 35000);
+        e.display();
+    </script>
+</body>
+</html>
