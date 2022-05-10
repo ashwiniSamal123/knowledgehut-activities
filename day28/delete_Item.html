@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Electronic Appliances</h1>
+    </div>
+    <script type="text/javascript">
+        var product=['mobile','laptop','AC','Gyser'];
+        var cartItem=[];
+        document.write(`<ul>`);
+        product.forEach((item,index)=>{
+            document.write(`<li>${item} <button onClick="addItem(${index})">Add ${item}</button></li>`)
+        });
+        document.write(`</ul>`);
+
+        function addItem(index){
+            var item=product[index];
+    
+            cartItem.push(item);
+            
+            var cartSize=document.getElementById('cartSize');
+            cartSize.innerHTML=`<h4>Cart Size: ${cartItem.length}</h4>`;
+            var ele=document.getElementById('main');
+            var list='';
+            
+            cartItem.forEach((item,index)=>{
+                list=list+`<li>${item} <button onClick="deleteItem(${index})">Delete ${item}</button></li>`
+            })
+            ele.innerHTML=list;
+        }
+        
+
+        function deleteItem(index){
+            var index=index;
+            cartItem.splice(index,1);
+
+            var cartSize=document.getElementById('cartSize');
+            cartSize.innerHTML=`<h4>Cart Size: ${cartItem.length}</h4>`;  
+            var ele=document.getElementById('main');
+            var list='';
+            cartItem.forEach((item,index)=>{
+                list=list+`<li>${item} <button onClick="deleteItem(${index})">Delete ${item}</button></li>`
+            })
+            ele.innerHTML=list;
+        }
+    </script>
+    <div> 
+        <h1>Your cart Items: </h1>
+    </div>
+    
+    <div id="cartSize">
+        <h4>Cart size:</h4>
+    </div>
+    <div id="main">
+        <h4>Cart: </h4>
+
+    </div>
+</body>
+</html>
