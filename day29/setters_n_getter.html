@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Example of setter and getter</h1> </div>
+    <div id="main"></div>
+    <script>
+        class user{
+             constructor(name,gen) {
+               this.username = name;
+               this.gender= gen;
+            }
+            set name(name) {
+                console.log('setter is called when you modify the data');
+                if(name == ''){
+                    throw Error("name can't be empty");
+                }
+                this.username = name;
+            }
+            get name(){
+                console.log('getter is called when you retreive the data');
+                if(this.gender == 'M'){
+                    return `<h4>Myself Mr. ${ this.username}</h4>`;
+                }
+                else{
+                    return `<h4>Myself Ms. ${ this.username}</h4>`;
+                }
+            }
+        }
+        let u = new user("Raj","M");
+        let ele = document.getElementById("main");
+        u.name="Rishi";
+        ele.innerHTML=u.name;
+    </script>
+</body>
+</html>
