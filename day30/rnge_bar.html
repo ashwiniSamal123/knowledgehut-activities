@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Example of Range bar</h2>
+   0<input type="range" name="" id="i1" min="0" max="5" oninput="slide()"><span id="s1">1</span> 
+   <script> 
+      function slide(){
+          let ele=document.getElementById("i1");
+          let span = document.getElementById("s1");
+          span.innerHTML= ele.value;
+      }  
+   </script>
+</body>
+</html>
