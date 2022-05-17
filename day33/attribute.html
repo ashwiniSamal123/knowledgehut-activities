@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function formatName(user){
+             return user.firstname + ' ' + user.lastname;
+        }
+        function Hello(){
+            let person = {firstname:'Sachin', lastname:'Tendulkar'}
+            let imageUrl= "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.sportphotogallery.com%2Fcontent%2Fimages%2Fcmsfiles%2Fproduct%2F2738%2F2738-list.jpg&imgrefurl=https%3A%2F%2Fwww.sportphotogallery.com%2Fcricket%2F100th-international-100-sachin-tendulkar-2738%2F&tbnid=i_FuyXcyl28EZM&vet=12ahUKEwj_1Y7VzuT3AhVsi9gFHfX5BXsQMygAegUIARDdAQ..i&docid=mupEDCW40VkrBM&w=267&h=400&q=sachin%20tendulkar%20image&ved=2ahUKEwj_1Y7VzuT3AhVsi9gFHfX5BXsQMygAegUIARDdAQ";
+            return ( <div>
+                <img src={imageUrl} width = "100" height = "100" />
+                <h2>Hello {formatName(person)}</h2></div>);
+        }
+        function App(){
+            return (<div>
+            <Hello />
+            <Hello />
+            <Hello />
+            </div>);
+        }
+        ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+</body>
+</html>
