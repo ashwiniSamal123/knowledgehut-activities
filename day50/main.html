@@ -7,27 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>This is client program</h2>
-    Enter your name: <input type="text" id="name" value="">
-    <button onclick="info()">Enter</button>
-   
-    <button onclick="sendMessage()">Send</button>
-    <div id="chatbox"></div>
+    <div>
+        <input type = "text" id = "username" placeholder = 'enter your name'>
+        <button onclick ="register()"> Rgister</button>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-       
-        let socket = io();
-        function info(){
-          Enter message<input type="text" id="message" value="">}
-        function sendMessage()
-        {
-            let inputValue = document.getElementById('message').value;
-            socket.emit('message',inputValue);
-        }
-        socket.on('publish',(data)=>{
-            let ele = document.getElementById('chatbox');
-            ele.innerHTML +=`<p>${data}<p>`;
-        })
+       let socket = io();
+       let username;
+       function register() {
+         let inputValue = document.getElementById("username").value;
+         socket.emit('username', inputValue);
+                  
+       }
+       socket.on('un',(name) =>{
+           let username = name;
+           document.body.innerHTML = `<div>
+             <h2>${username} is chatting</h2>
+             <input type = "text" id = "chatbox">
+             <button onclick="send()"> send </button>
+             <div id = "box"></div>
+            </div>`
+       });
+       function send(){
+           let msg = document.getElementById('chatbox').value;
+           let obj = {message : msg, name: username};
+           socket.emit('message',obj);
+
+       }
+       socket.on('publish', (obj)=>{
+           let ele = document.getElementById('box');
+           ele.innerHTML  += `<div>${obj.name}: <i>${obj.message}</div>`
+       })
+
     </script>
 </body>
 </html>

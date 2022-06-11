@@ -8,8 +8,11 @@ app.get('/',(request,response)=>{
 });
 
 io.on("connection", (socket)=>{
-    socket.on('message',(data)=>{
-        io.sockets.emit('publish',data);
-    })
-})
+    socket.on('username',(user)=>{
+       socket.emit('un',user);
+    });
+    socket.on('message',(obj)=>{
+        io.sockets.emit('publish',obj);
+    });
+});
 http.listen(port,()=>console.log(`server running at ${port}`));
